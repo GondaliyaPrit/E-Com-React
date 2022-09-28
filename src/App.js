@@ -15,6 +15,8 @@ import p8 from "../src/img/p-8.webp";
 import p9 from "../src/img/p-9.webp";
 import p10 from "../src/img/p-10.webp";
 import Services from "./Componets/Servies";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Collection from "./Componets/collection";
 
 const productlits = [
   {
@@ -88,17 +90,30 @@ const productlits = [
     price: "$39.99",
   },
 ];
+
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <Herosection />
-      <DiscountSlider />
-      <Catproductlist products={productlits} catname={"Best Sellers"} />
-      <Banner />
-      <Catproductlist products={productlits} catname={"New Arrivals"} />
-      <Services />
-    </>
+      <Routes>
+        <Route path="/Collection" element={<Collection />} />
+
+        <Route
+          path="/"
+          element={
+            <>
+              <Herosection />
+              <DiscountSlider />
+              <Catproductlist products={productlits} catname={"Best Sellers"} />
+              <Banner />
+              <Catproductlist products={productlits} catname={"New Arrivals"} />
+              <Services />
+            </>
+          }
+        />
+        <Route path="about" element={<Herosection />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -2,6 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import bag from "../img/bag.png";
+import { Link } from "react-router-dom";
 
 import React from "react";
 
@@ -9,33 +10,42 @@ function Navbar() {
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
   const { user, isAuthenticated } = useAuth0();
-
   return (
     <>
-      <section class="header-main">
-        <div class="container">
-          <div class="header-inner-main">
-            <div class="header-inner header-left">
-              <img src="./logo.png" alt="logo-white" class="logo" />
+      <section className="header-main">
+        <div className="container">
+          <div className="header-inner-main">
+            <div className="header-inner header-left">
+              <Link to="/">
+                <img src="./logo.png" alt="logo-white" className="logo" />
+              </Link>
             </div>
-            <div class="header-inner header-center">
-              <ul class="navbar-list">
-                <li class="navbar">
-                  <a class="nava">Home</a>
+            <div className="header-inner header-center">
+              <ul className="navbar-list">
+                <li className="navbar">
+                  <Link to="/MensWear" className="nava">
+                    Men Wear
+                  </Link>
                 </li>
-                <li class="navbar">
-                  <a class="nava">Features</a>
+                <li className="navbar">
+                  <Link to="/WomensWear" className="nava">
+                    Women Wear
+                  </Link>
                 </li>
-                <li class="navbar">
-                  <a class="nava">Services</a>
+                <li className="navbar">
+                  <Link to="/Collection" className="nava">
+                    Collection
+                  </Link>
                 </li>
-                <li class="navbar">
-                  <a class="nava">Company</a>
+                <li className="navbar">
+                  <Link to="/Serach" className="nava">
+                    Serach
+                  </Link>
                 </li>
               </ul>
             </div>
 
-            <div class="header-inner header-right">
+            <div className="header-inner header-right">
               <img src={bag} alt="cart" className="cart-btn" />
               {isAuthenticated && (
                 <p className="user_detail">
@@ -47,7 +57,7 @@ function Navbar() {
                 {isAuthenticated ? (
                   <button
                     onClick={() => logout({ returnTo: window.location.origin })}
-                    class="btn-getstarted"
+                    className="btn-getstarted"
                     id="getstart"
                   >
                     Sign out
@@ -56,7 +66,6 @@ function Navbar() {
                   <button
                     onClick={() => loginWithRedirect()}
                     class="btn-getstarted"
-                    id="getstart"
                   >
                     Sign in
                   </button>

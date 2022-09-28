@@ -2,6 +2,7 @@ import s1 from "../img/s1.png";
 import s2 from "../img/s2.png";
 import s3 from "../img/s3.png";
 import s4 from "../img/s4.png";
+
 function Services() {
   return (
     <>

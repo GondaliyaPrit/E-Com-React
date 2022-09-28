@@ -216,12 +216,17 @@ img.product-img {
 }
 h5.product-name {
   padding-bottom: 5px;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-size: 16px;
 }
 h5.product-details {
   font-size: 14px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -230,7 +235,7 @@ h5.product-details {
 }
 h1.cat-name {
   margin-top: 25px;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 5px;
 }
@@ -282,7 +287,83 @@ h1.cat-name {
   margin-bottom: 20px;
 }
 
-
 /*Services Section end */
 
+/*Collection Section Start */
+.collection-container{
+  margin-top: 69px;
+}
+.collection-list{
+  max-width: 25%;
+  overflow: scroll;
+  height: 100vh;
+  width: 20%;
+}
+.collection-list::-webkit-scrollbar {
+  display: none;
+}
+.collection-data{
+  max-width: 75%;
+  height: 100vh;
+  overflow: scroll;
+  width: 80%;
+}
+.collection-data::-webkit-scrollbar {
+  display: none;
+}
+.collection-container{
+  display: flex;
+}
+.collection-name{
+  margin-top: 25px;
+  font-size: 24px;
+  font-weight: 600;
+}
+.collection-line{
+  width: 80%;
+  margin-top: 35px;
+  size: 1;
+}
+.collectionlist{
+  padding: 10px 0px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.collectionlist:hover{
+  font-weight: 800;
+  cursor: pointer;
+}
 
+.listwrap{
+  padding: 20px 0px;
+}
+
+
+button.btn-loadmore {
+  
+  padding: 10px 25px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  border: #000000;
+  border-radius: 8px;
+  background-color: #000000;
+  transition: 0.6s ease;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+button.btn-loadmore:hover {
+  background: #2f3031a2;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #fff;
+}
+.btn-loadmore {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+/*Collection Section End */
