@@ -211,9 +211,19 @@ img.product-img {
   border-radius: 6px 6px 6px 6px;
 }
 .product-card {
-  max-width: 20%;
+  max-width: 19%;
   padding: 20px 10px;
+  margin: 0px 5px;
+  margin-bottom: 10px;
 }
+
+.product-card:hover {
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
 h5.product-name {
   padding-bottom: 5px;
   -webkit-line-clamp: 1;
