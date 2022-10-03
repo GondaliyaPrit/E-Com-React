@@ -3,7 +3,7 @@ function Banner() {
   return (
     <>
       <div className="container">
-        <img src={offimg} alt="offbanner"  className="off-card"/>
+        <img src={offimg} alt="offbanner" className="off-card" />
       </div>
     </>
   );
