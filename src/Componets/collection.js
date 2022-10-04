@@ -228,21 +228,21 @@ const collectionname = [
   "Party Collection",
 ];
 
+let tenproduct = [];
 function Collection() {
   const [ProductToShow, setProductToShow] = useState([]);
   const [load, setLoad] = useState(5);
   const [selectedcollection, setCollection] = useState("Best Sellers");
 
   const productgroup = (start, end) => {
-    let tenproduct = [];
     const group = productlits.slice(start, end);
     tenproduct = [...tenproduct, ...group];
     setProductToShow(tenproduct);
   };
 
   const particularCollection = (colname) => {
-    setCollection(colname);
     let tenproduct = [];
+    setCollection(colname);
     const data = productlits.filter(function (curitem) {
       return curitem.collection === colname;
     });

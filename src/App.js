@@ -2,7 +2,6 @@ import "./App.css";
 import Navbar from "./Componets/nav";
 import Herosection from "./Componets/HeroSection";
 import Catproductlist from "./Componets/catproductlist";
-import DiscountSlider from "./Componets/Discountslider";
 import Banner from "./Componets/banner";
 import p1 from "../src/img/p1.webp";
 import p2 from "../src/img/p-2.webp";
@@ -14,9 +13,11 @@ import p7 from "../src/img/p-7.webp";
 import p8 from "../src/img/p-8.webp";
 import p9 from "../src/img/p-9.webp";
 import p10 from "../src/img/p-10.webp";
+import bag from "./img/bag.png";
 import Services from "./Componets/Servies";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Collection from "./Componets/collection";
+import Discountcard from "./Componets/Discountcards";
 
 const productlits = [
   {
@@ -94,16 +95,21 @@ const productlits = [
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar
+        pageWrapId={"page-wrap"}
+        outerContainerId={"App"}
+        right
+        customBurgerIcon={<img src={bag} />}
+        width={"20%"}
+      />
       <Routes>
         <Route path="/Collection" element={<Collection />} />
-
         <Route
           path="/"
           element={
             <>
               <Herosection />
-              <DiscountSlider />
+              <Discountcard />
               <Catproductlist products={productlits} catname={"Best Sellers"} />
               <Banner />
               <Catproductlist products={productlits} catname={"New Arrivals"} />

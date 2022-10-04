@@ -12,6 +12,11 @@
   margin: 0 auto;
 }
 
+.alignment {
+  display: flex;
+  justify-content: center;
+}
+
 /* Navbar  start */
 .header-inner.header-left {
   display: flex;
@@ -136,6 +141,7 @@ img.logo-2.hide-2 {
 .swiper {
   width: 100%;
   height: 100%;
+  margin-top: 42px;
 }
 
 .swiper-slide img {
@@ -167,6 +173,9 @@ img.logo-2.hide-2 {
 /*Banner Slider  end */
 /*Discount Slider start */
 .discount-card {
+  max-width: 33%;
+  width: 32%;
+  margin: 20px 10px;
   border-radius: 10px;
 }
 
@@ -254,6 +263,7 @@ h1.cat-name {
 .off-card {
   border-radius: 10px;
   max-width: 100%;
+  width: 100%;
 }
 .off-card:hover {
   cursor: pointer;
@@ -263,7 +273,7 @@ h1.cat-name {
 /*Services Section start */
 .wrap-service-card {
   display: flex;
- border-radius: 5px;
+  border-radius: 5px;
   justify-content: space-between;
 }
 .service-card {
@@ -276,23 +286,23 @@ h1.cat-name {
   align-items: center;
   justify-items: center;
 }
-.service-img{
+.service-img {
   height: 100px;
   width: 100px;
   padding: 10px;
 }
 
-.service-tittle{
+.service-tittle {
   text-align: center;
   font-size: 18px;
 }
-.service-subtittle{
+.service-subtittle {
   padding: 10px;
   font-weight: 400;
   text-align: center;
 }
 .wrap-service-card {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -300,11 +310,11 @@ h1.cat-name {
 /*Services Section end */
 
 /*Collection Section Start */
-.collection-container{
+.collection-container {
   margin-top: 69px;
 }
-.collection-list{
-  max-width: 25%;
+.collection-list {
+  max-width: 20%;
   overflow: scroll;
   height: 100vh;
   width: 20%;
@@ -312,8 +322,8 @@ h1.cat-name {
 .collection-list::-webkit-scrollbar {
   display: none;
 }
-.collection-data{
-  max-width: 75%;
+.collection-data {
+  max-width: 80%;
   height: 100vh;
   overflow: scroll;
   width: 80%;
@@ -321,36 +331,34 @@ h1.cat-name {
 .collection-data::-webkit-scrollbar {
   display: none;
 }
-.collection-container{
+.collection-container {
   display: flex;
 }
-.collection-name{
+.collection-name {
   margin-top: 25px;
   font-size: 24px;
   font-weight: 600;
 }
-.collection-line{
+.collection-line {
   width: 80%;
   margin-top: 35px;
   size: 1;
 }
-.collectionlist{
+.collectionlist {
   padding: 10px 0px;
   font-size: 15px;
   font-weight: 500;
 }
-.collectionlist:hover{
+.collectionlist:hover {
   font-weight: 800;
   cursor: pointer;
 }
 
-.listwrap{
+.listwrap {
   padding: 20px 0px;
 }
 
-
 button.btn-loadmore {
-  
   padding: 10px 25px;
   font-size: 15px;
   color: white;
@@ -377,3 +385,84 @@ button.btn-loadmore:hover {
   justify-content: center;
 }
 /*Collection Section End */
+
+/* 1440 responsive start */
+
+@media (max-width: 1500px) {
+  .discount-card {
+    width: 31%;
+  }
+  .product-card {
+    max-width: 25%;
+    padding: 20px 10px;
+    margin: 0px 0px;
+    margin-bottom: 10px;
+  }
+}
+/* 1440 responsive end */
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+  top: 45%;
+  position: relative;
+}
+
+.bm-item {
+  display: inline-block;
+
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+.bm-item:hover {
+  color: white;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #000;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}

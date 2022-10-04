@@ -12,6 +12,20 @@ function DiscountSlider() {
     <>
       <div className="container">
         <Swiper
+          breakpoints={{
+            // when window width is >= 640px
+            640: {
+              width: 640,
+              slidesPerView: 1,
+              loop: true,
+            },
+            // when window width is >= 768px
+            2560: {
+              width: 2560,
+              slidesPerView: 4,
+              loop: true,
+            },
+          }}
           spaceBetween={66}
           slidesPerView={3}
           navigation={true}

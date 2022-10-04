@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import bag from "../img/bag.png";
 import { Link } from "react-router-dom";
+import { slide as Menu } from "react-burger-menu";
 
 import React from "react";
 
-function Navbar() {
+function Navbar(props) {
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
   const { user, isAuthenticated } = useAuth0();
@@ -46,6 +47,7 @@ function Navbar() {
             </div>
 
             <div className="header-inner header-right">
+              <Menu {...props}></Menu>
               <img src={bag} alt="cart" className="cart-btn" />
               {isAuthenticated && (
                 <p className="user_detail">
