@@ -1,5 +1,4 @@
 import "./App.css";
-import Navbar from "./Componets/nav";
 import Herosection from "./Componets/HeroSection";
 import Catproductlist from "./Componets/catproductlist";
 import Banner from "./Componets/banner";
@@ -13,11 +12,15 @@ import p7 from "../src/img/p-7.webp";
 import p8 from "../src/img/p-8.webp";
 import p9 from "../src/img/p-9.webp";
 import p10 from "../src/img/p-10.webp";
-import bag from "./img/bag.png";
 import Services from "./Componets/Servies";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Collection from "./Componets/collection";
 import Discountcard from "./Componets/Discountcards";
+import { useAuth0 } from "@auth0/auth0-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import CartPages from "./Componets/CartPage.tsx";
 
 const productlits = [
   {
@@ -92,22 +95,91 @@ const productlits = [
   },
 ];
 
+function Navbar() {
+  const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
+  return (
+    <>
+      <section className="header-main">
+        <div className="container">
+          <div className="header-inner-main">
+            <div className="header-inner header-left">
+              <Link to="/">
+                <img src="./logo.png" alt="logo-white" className="logo" />
+              </Link>
+            </div>
+            <div className="header-inner header-center">
+              <ul className="navbar-list">
+                <li className="navbar">
+                  <Link to="/MensWear" className="nava">
+                    Men Wear
+                  </Link>
+                </li>
+                <li className="navbar">
+                  <Link to="/WomensWear" className="nava">
+                    Women Wear
+                  </Link>
+                </li>
+                <li className="navbar">
+                  <Link to="/Collection" className="nava">
+                    Collection
+                  </Link>
+                </li>
+                <li className="navbar">
+                  <Link to="/Serach" className="nava">
+                    Search
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="header-inner header-right">
+              {isAuthenticated && (
+                <p className="user_detail">
+                  {<FontAwesomeIcon icon={faUser} />}
+                  &nbsp;&nbsp;Welcome {user.nickname}
+                </p>
+              )}
+              <CartPages />
+              <form>
+                {isAuthenticated ? (
+                  <button
+                    onClick={() => logout({ returnTo: window.location.origin })}
+                    className="btn-getstarted"
+                    id="getstart"
+                  >
+                    Sign out
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => loginWithRedirect()}
+                    className="btn-getstarted"
+                  >
+                    Sign in
+                  </button>
+                )}
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar
-        pageWrapId={"page-wrap"}
-        outerContainerId={"App"}
-        right
-        customBurgerIcon={<img src={bag} />}
-        width={"20%"}
-      />
+      <Navbar />
+
       <Routes>
         <Route path="/Collection" element={<Collection />} />
         <Route
           path="/"
           element={
             <>
+              <CartPages />
               <Herosection />
               <Discountcard />
               <Catproductlist products={productlits} catname={"Best Sellers"} />
