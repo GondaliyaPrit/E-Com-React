@@ -42,14 +42,15 @@ function CartPages() {
         <img src={cartemp} alt="cart" className="empcart" onClick={toggleDrawer("right", false)}/>
         <h2 className="cart-emp-tittle" >Your cart is empty !</h2>
         </div>
-        <div className="checkout-btn">
+        
+        <div className="checkout-btn" onClick={onclick}>
           <h3 className="checkout-btn-tittle">Proceed To Checkout</h3>
           <h3 className="checkout-total">| {"$0.0"}</h3>
-       
         </div> 
       </div>
     </Box>
   );
+  const onclick = () => console.log('hi');
 
   return(
     <div>

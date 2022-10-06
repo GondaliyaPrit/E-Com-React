@@ -21,6 +21,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import CartPages from "./Componets/CartPage.tsx";
+import ProductDetails from "./Componets/ProductDetails";
 
 const productlits = [
   {
@@ -172,7 +173,6 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-
       <Routes>
         <Route path="/Collection" element={<Collection />} />
         <Route
@@ -190,6 +190,7 @@ function App() {
           }
         />
         <Route path="about" element={<Herosection />} />
+        <Route path="/productdetails" element={<ProductDetails />} />
       </Routes>
     </BrowserRouter>
   );
