@@ -462,7 +462,7 @@ img.empcart {
   display: flex;
   gap: 2%;
 }
-.product-img {
+.productdetails-img {
   max-width: 50%;
   width: 50%;
 }
@@ -483,15 +483,117 @@ img.empcart {
   margin-bottom: 1%;
   font-size: 32px;
 }
-.productdetails-size {
+.productdetails-size,
+.productdetails-colors {
   margin-top: 2%;
+  margin-bottom: 1%;
   font-size: 18px;
   font-weight: 550;
 }
 .size-list {
   display: flex;
-  gap: 5%;
+  padding-bottom: 2%;
+  gap: 2%;
 }
+.size {
+  padding: 6px;
+  text-align: center;
+  border: solid 1px transparent;
+  width: 6%;
+}
+
+.size:hover {
+  cursor: pointer;
+  border: solid 1px;
+  border-radius: 5px;
+}
+.productdetails-colorswrap {
+  display: flex;
+  gap: 2%;
+}
+
+.qty-wrap {
+  display: flex;
+  font-weight: 500;
+  margin: 20px 0px;
+  align-items: center;
+}
+.qty-total {
+  font-size: 25px;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  padding: 0px 35px;
+  font-weight: 500;
+}
+.qty-btn {
+  font-size: 25px;
+  border: solid 1px;
+  padding: 0px 10px;
+  font-weight: 500;
+}
+.qty-btn.pluse {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.qty-btn:hover {
+  cursor: pointer;
+  border: solid 1px black;
+  background-color: black;
+  color: white;
+  transition: 0.6s;
+}
+.qty-btn.minus {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+h3.add-cart-btn-tittle {
+  font-size: 12px;
+  font-weight: 400;
+}
+.productdetails-addcart-btn {
+  margin-left: 15px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  width: 30%;
+  border: solid 1px #999999;
+  padding: 10px;
+  background-color: #999999;
+}
+.productdetails-addcart-btn:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+span.productdetails-contant {
+  font-size: 15px;
+  font-weight: normal;
+  color: gray;
+}
+
+.accordion {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: white;
+}
+
+.accordion-title,
+.accordion-content {
+  padding: 1rem;
+}
+
+.accordion-content {
+  background-color: white;
+}
+
 /*ProductDetails page End */
 
 /* 1440 responsive start */
