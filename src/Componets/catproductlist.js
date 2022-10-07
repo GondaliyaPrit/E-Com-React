@@ -9,7 +9,10 @@ function catproductlist({ products, catname }) {
           {products.map((product) => (
             <>
               <div className="product-card">
-                <Link to="/productdetails" className="nava">
+                <Link
+                  to={"/productdetails/" + products.productname}
+                  className="nava"
+                >
                   <img
                     src={product.image}
                     alt="product-img"

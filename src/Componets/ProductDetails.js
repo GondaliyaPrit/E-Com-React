@@ -136,22 +136,21 @@ function ProductDetails() {
             <hr />
             {
               pdata.map((dat) => {
-                return (
-                  <>
-                    <div className="accordion-item">
-                      <div
-                        className="accordion-title"
-                        onClick={() => setIsActive(!isActive)}
-                      >
-                        <div>{dat.title}</div>
-                        <div>{isActive ? "-" : "+"}</div>
-                      </div>
-                      {isActive && (
-                        <div className="accordion-content">{dat.content}</div>
-                      )}
+                <>
+                  <div className="accordion-item">
+                    <div
+                      className="accordion-title"
+                      onClick={() => setIsActive(!isActive)}
+                    >
+                      return()
+                      <div>{dat.title}</div>
+                      <div>{isActive ? "-" : "+"}</div>
                     </div>
-                  </>
-                );
+                    {isActive && (
+                      <div className="accordion-content">{dat.content}</div>
+                    )}
+                  </div>
+                </>;
               })
 
               // <div className="accordion-item">

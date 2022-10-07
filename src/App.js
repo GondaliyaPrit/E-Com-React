@@ -190,7 +190,7 @@ function App() {
           }
         />
         <Route path="about" element={<Herosection />} />
-        <Route path="/productdetails" element={<ProductDetails />} />
+        <Route path="/productdetails:id" element={<ProductDetails />} />
       </Routes>
     </BrowserRouter>
   );
