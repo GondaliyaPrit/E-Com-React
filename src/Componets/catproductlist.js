@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 function catproductlist({ products, catname }) {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <div className="container">
@@ -10,7 +13,7 @@ function catproductlist({ products, catname }) {
             <>
               <div className="product-card">
                 <Link
-                  to={"/productdetails/" + products.productname}
+                  to={`/productdetails/${product.productname}`}
                   className="nava"
                 >
                   <img

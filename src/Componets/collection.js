@@ -10,6 +10,7 @@ import p8 from "../img/p-8.webp";
 import p9 from "../img/p-9.webp";
 import p10 from "../img/p-10.webp";
 import React, { useState, useEffect } from "react";
+import Footer from "./footer";
 
 let productperpage = 5;
 
@@ -296,6 +297,7 @@ function Collection() {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

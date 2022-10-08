@@ -6,6 +6,7 @@ import p2 from "../img/p-2.webp";
 import p3 from "../img/p-3.webp";
 import p4 from "../img/p-5.webp";
 import p5 from "../img/p-4.webp";
+import Footer from "./footer";
 
 const productlits = [
   {
@@ -72,6 +73,9 @@ const pdata = [
 
 function ProductDetails() {
   const [isActive, setIsActive] = useState(false);
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <div className="container">
@@ -170,6 +174,7 @@ function ProductDetails() {
           </div>
         </div>
         <Catproductlist products={productlits} catname={"Related Products"} />
+        <Footer />
       </div>
     </>
   );

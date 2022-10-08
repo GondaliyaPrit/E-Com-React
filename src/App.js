@@ -22,6 +22,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import CartPages from "./Componets/CartPage.tsx";
 import ProductDetails from "./Componets/ProductDetails";
+import Footer from "./Componets/footer";
 
 const productlits = [
   {
@@ -186,11 +187,15 @@ function App() {
               <Banner />
               <Catproductlist products={productlits} catname={"New Arrivals"} />
               <Services />
+              <Footer />
             </>
           }
         />
         <Route path="about" element={<Herosection />} />
-        <Route path="/productdetails:id" element={<ProductDetails />} />
+        <Route
+          path="/productdetails/:productname"
+          element={<ProductDetails />}
+        />
       </Routes>
     </BrowserRouter>
   );

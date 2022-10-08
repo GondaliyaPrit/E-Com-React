@@ -595,6 +595,54 @@ span.productdetails-contant {
 }
 
 /*ProductDetails page End */
+/*footor start*/
+
+.footer-wrap {
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+.w-100 {
+  width: 100%;
+}
+.pad15 {
+  padding: 15px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+}
+.social-icon img {
+  width: 40px;
+  padding-right: 1rem;
+}
+.social-icon {
+  font-size: 15px;
+  color: #5a5a5a;
+  display: flex;
+  padding: 0.5rem 0;
+}
+.social-contact p a {
+  color: #5a5a5a;
+  font-size: 15px;
+  padding: 0.5rem 0;
+  transition: all 0.5s;
+}
+.social-contact p a:hover {
+  color: #000;
+}
+.footer-heading {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 0 1.5rem 0;
+}
+.desc {
+  padding: 0.5rem 0;
+}
+/*footor end*/
 
 /* 1440 responsive start */
 
