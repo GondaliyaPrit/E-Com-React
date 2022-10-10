@@ -583,15 +583,21 @@ span.productdetails-contant {
   justify-content: space-between;
   cursor: pointer;
   background-color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 1rem 0px;
 }
 
-.accordion-title,
 .accordion-content {
   padding: 1rem;
 }
 
 .accordion-content {
   background-color: white;
+}
+
+.accordion-icon {
+  font-size: 24px;
 }
 
 /*ProductDetails page End */

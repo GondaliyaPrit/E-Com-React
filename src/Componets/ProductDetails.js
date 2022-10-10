@@ -73,6 +73,8 @@ const pdata = [
 
 function ProductDetails() {
   const [isActive, setIsActive] = useState(false);
+  const [isAdditional, setAdditional] = useState(false);
+  const [isCustomer, setCustomer] = useState(false);
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };
@@ -138,39 +140,67 @@ function ProductDetails() {
               <span className="productdetails-contant"> Casual,Cotton,Red</span>
             </h4>
             <hr />
-            {
-              pdata.map((dat) => {
-                <>
-                  <div className="accordion-item">
-                    <div
-                      className="accordion-title"
-                      onClick={() => setIsActive(!isActive)}
-                    >
-                      return()
-                      <div>{dat.title}</div>
-                      <div>{isActive ? "-" : "+"}</div>
-                    </div>
-                    {isActive && (
-                      <div className="accordion-content">{dat.content}</div>
-                    )}
-                  </div>
-                </>;
-              })
 
-              // <div className="accordion-item">
-              //   <div
-              //     className="accordion-title"
-              //     onClick={() => setIsActive(!isActive)}
-              //   >
-              //     <div>{"dsdsdsd"}</div>
-              //     <div>{isActive ? "-" : "+"}</div>
-              //   </div>
-              //   {isActive && (
-              //     <div className="accordion-content">{"content"}</div>
-              //   )}
-              // </div>
-            }
+            <div className="accordion-item">
+              <div
+                className="accordion-title"
+                onClick={() => {
+                  setAdditional(!isAdditional);
+                  setCustomer(false);
+                  setIsActive(false);
+                }}
+              >
+                <div>{"Product Details"}</div>
+                <div className="accordion-icon">{isAdditional ? "-" : "+"}</div>
+              </div>
+              {isAdditional && (
+                <div className="accordion-content">
+                  {
+                    "Our Customer Experience Team is available 7 days a week and we offer 2 ways to get in contact.Email and Chat . We try to reply quickly, so you need not to wait too long for a response!."
+                  }
+                </div>
+              )}
+            </div>
             <hr />
+
+            <div className="accordion-item">
+              <div
+                className="accordion-title"
+                onClick={() => {
+                  setIsActive(!isActive);
+                  setCustomer(false);
+                  setAdditional(false);
+                }}
+              >
+                <div>{"Additional Information"}</div>
+                <div className="accordion-icon">{isActive ? "-" : "+"}</div>
+              </div>
+              {isActive && (
+                <div className="accordion-content">
+                  {
+                    "Please read the documentation carefully . We also have some online video tutorials regarding this issue . If the problem remains, Please Open a ticket in the support forum"
+                  }
+                </div>
+              )}
+            </div>
+
+            <hr />
+            <div className="accordion-item">
+              <div
+                className="accordion-title"
+                onClick={() => {
+                  setCustomer(!isCustomer);
+                  setIsActive(false);
+                  setAdditional(false);
+                }}
+              >
+                <div>{"Customer Reviews"}</div>
+                <div className="accordion-icon">{isCustomer ? "-" : "+"}</div>
+              </div>
+              {isCustomer && (
+                <div className="accordion-content">{"content"}</div>
+              )}
+            </div>
           </div>
         </div>
         <Catproductlist products={productlits} catname={"Related Products"} />
