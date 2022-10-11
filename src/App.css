@@ -589,15 +589,25 @@ span.productdetails-contant {
 }
 
 .accordion-content {
-  padding: 1rem;
-}
-
-.accordion-content {
+  padding: 1rem 0px;
   background-color: white;
 }
 
 .accordion-icon {
   font-size: 24px;
+}
+h4.detailsreview-content {
+  font-weight: 100;
+  font-size: 14px;
+  padding: 10px 0px;
+}
+
+span.style-module_fillIcons__6---A.filled-icons {
+  color: black !important;
+}
+svg.star-svg {
+  height: 28px !important;
+  width: 30px !important;
 }
 
 /*ProductDetails page End */

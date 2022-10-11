@@ -1,5 +1,6 @@
 import p1 from "../img/p-20.webp";
 import Catproductlist from "../Componets/catproductlist";
+import { Rating } from "react-simple-star-rating";
 
 import React, { useState } from "react";
 import p2 from "../img/p-2.webp";
@@ -46,38 +47,21 @@ const productlits = [
   },
 ];
 
-const pdata = [
-  {
-    title: "Section 1",
-    content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
-    laborum cupiditate possimus labore, hic temporibus velit dicta earum
-    suscipit commodi eum enim atque at? Et perspiciatis dolore iure
-    voluptatem.`,
-  },
-  {
-    title: "Section 2",
-    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-    reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-    quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-    pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-    quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-    Repudiandae, mollitia id reprehenderit a ab odit!`,
-  },
-  {
-    title: "Section 3",
-    content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-    quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-    dolor ut sequi minus iste? Quas?`,
-  },
-];
-
 function ProductDetails() {
   const [isActive, setIsActive] = useState(false);
   const [isAdditional, setAdditional] = useState(false);
   const [isCustomer, setCustomer] = useState(false);
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
+  const [rating, setRating] = useState(0);
+  var handleRating = function (rate) {
+    setRating(rate);
   };
+
+  const onPointerEnter = () => null;
+  const onPointerLeave = () => null;
+  var onPointerMove = function (value, index) {
+    return null;
+  };
+
   return (
     <>
       <div className="container">
@@ -198,7 +182,27 @@ function ProductDetails() {
                 <div className="accordion-icon">{isCustomer ? "-" : "+"}</div>
               </div>
               {isCustomer && (
-                <div className="accordion-content">{"content"}</div>
+                <div className="accordion-content">
+                  {
+                    <>
+                      <h4 className="detailsreview-content">
+                        Please read the documentation carefully . We also have
+                        some online video tutorials regarding this issue . If
+                        the problem remains, Please Open a ticket in the support
+                        forum
+                      </h4>
+                      <h4 className="productdetails-size">Your Rating *</h4>
+                      <Rating
+                        className="detailspage-rating"
+                        onClick={handleRating}
+                        onPointerEnter={onPointerEnter}
+                        onPointerLeave={onPointerLeave}
+                        onPointerMove={onPointerMove}
+                      />
+                      <h4 className="productdetails-size">Message *</h4>
+                    </>
+                  }
+                </div>
               )}
             </div>
           </div>
